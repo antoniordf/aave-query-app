@@ -3,7 +3,7 @@
       "url": "http://localhost:8080"
     },
     "sepolia": {
-      "contractAddress": "0xDB9c1229261C9bAFCf0CE33F59491cF1B6847319"
+      "contractAddress": "0x52cA360cF0dfC2CAbFa5F2D3Ff45C1c00e68a238"
     },
     "assets": {
       "WETH": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
