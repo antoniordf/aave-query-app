@@ -1,0 +1,11 @@
+{
+    "localhost": {
+      "url": "http://localhost:8080"
+    },
+    "sepolia": {
+      "contractAddress": "0xDB9c1229261C9bAFCf0CE33F59491cF1B6847319"
+    },
+    "assets": {
+      "WETH": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    }
+  }
