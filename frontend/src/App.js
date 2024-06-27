@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Contract from "./contract";
-import config from "../public/config.json";
-import AaveDataQuery from "../../out/AaveDataQuery.sol/AaveDataQuery.json";
+import config from "./config.json";
+import AaveDataQuery from "./AaveDataQuery.json";
 
 function App() {
   const [contract, setContract] = useState(null);
 
   useEffect(() => {
     async function initContract() {
-      const contract = new Contract("sepolia", config, AaveDataQuery);
+      const contract = new Contract("sepolia", config, AaveDataQuery.abi);
       await contract.initialize("sepolia");
       setContract(contract);
     }

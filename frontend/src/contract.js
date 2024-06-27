@@ -29,7 +29,7 @@ export default class Contract {
         this.signer
       );
 
-      this.account = await this.signer.getAddress();
+      this.account = await this.signer.address;
       console.log("Connected account:", this.account);
     } else {
       console.error("Error initializing contract.");

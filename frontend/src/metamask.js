@@ -6,7 +6,7 @@ async function requestAccount() {
   if (window.ethereum) {
     try {
       await window.ethereum.request({ method: "eth_requestAccounts" });
-      provider = new ethers.providers.Web3Provider(window.ethereum);
+      provider = new ethers.BrowserProvider(window.ethereum);
     } catch (error) {
       console.error("Error requesting accounts:", error);
       alert(
