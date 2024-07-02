@@ -2,13 +2,20 @@ import React, { useEffect, useState } from "react";
 import Contract from "./contract";
 import config from "./config.json";
 import AaveDataQuery from "./AaveDataQuery.json";
+import AaveAbi from "./AaveAbi.json";
+import { convertToPercentage } from "./utils";
 
 function App() {
   const [contract, setContract] = useState(null);
 
   useEffect(() => {
     async function initContract() {
-      const contract = new Contract("sepolia", config, AaveDataQuery.abi);
+      const contract = new Contract(
+        "sepolia",
+        config,
+        AaveDataQuery.abi,
+        AaveAbi
+      );
       await contract.initialize("sepolia");
       setContract(contract);
     }
@@ -42,9 +49,15 @@ function App() {
       <p>Total Stable Debt: ${result.totalStableDebt}</p>
       <p>Total Variable Debt: ${result.totalVariableDebt}</p>
       <p>Liquidity Rate: ${result.liquidityRate}</p>
-      <p>Variable Borrow Rate: ${result.variableBorrowRate}</p>
-      <p>Stable Borrow Rate: ${result.stableBorrowRate}</p>
-      <p>Average Stable Borrow Rate: ${result.averageStableBorrowRate}</p>
+      <p>Variable Borrow Rate: ${convertToPercentage(
+        result.variableBorrowRate
+      )}%</p>
+      <p>Stable Borrow Rate: ${convertToPercentage(
+        result.stableBorrowRate
+      )}%</p>
+      <p>Average Stable Borrow Rate: ${convertToPercentage(
+        result.averageStableBorrowRate
+      )}%</p>
       <p>Liquidity Index: ${result.liquidityIndex}</p>
       <p>Variable Borrow Index: ${result.variableBorrowIndex}</p>
       <p>Last Update Timestamp: ${result.lastUpdateTimestamp}</p>

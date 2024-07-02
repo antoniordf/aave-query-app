@@ -6,7 +6,7 @@ import "../src/AaveDataQuery.sol";
 
 contract DeployAaveDataQuery is Script {
     function run() external {
-        address aaveContractAddress = 0x3e9708d80f7B3e43118013075F7e95CE3AB31F31; // Sepolia Network
+        address aaveContractAddress = 0x3e9708d80f7B3e43118013075F7e95CE3AB31F31; // AAVE contract on the Sepolia Network
 
         uint256 deployerPrivateKey = vm.envUint("PRIVATE_KEY");
 
